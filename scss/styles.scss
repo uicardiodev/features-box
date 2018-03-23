@@ -1,0 +1,149 @@
+*{
+  box-sizing: border-box;
+  // outline: solid 1px rgba(0,0,0,0.3);
+}
+
+html{
+  background-color: #fbfbfb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+  color: #30BCCF;
+  text-decoration: none;
+}
+
+// Main content
+
+#wrapper{
+  overflow: hidden;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  height: 400px; width: 380px;
+
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 0 40px;
+
+  display: grid;
+  grid-template-rows: 85% 1fr;
+  
+  #body,#footer{ padding: 15px; text-align: center;}
+
+  #body{
+    display: grid;
+
+    .content{
+      position: relative;
+
+      .iconHolder{
+        width: 120px;
+        height: 120px;
+
+        left: 50%; margin-top: 20px;
+        position: relative;
+        transform: translate(-50%) rotate(0deg);
+        
+        background-color: aliceblue;
+        border-radius: 50%;
+
+        .icon{
+          position: absolute;
+          top: 0; left: 400;
+          opacity: 0;
+          width: 130px;
+          transform: scale(0.4) rotate(90deg);
+          transition: all 0.5s cubic-bezier(1, 0.03, 0.26, 0.93);
+          
+          &.active{
+            opacity: 1;
+            left: 0;
+            transform: scale(1) rotate(0deg);
+          }
+
+          &.toLeft{
+            opacity: 0;
+            left: -400;
+            transform: scale(0.4) rotate(-90deg);
+          }
+        }
+        
+  
+        .circles{
+          transition: all 0.8s ease-in-out;
+  
+          &.rotate-90{
+            transform: rotate(90deg);
+          }
+          &.rotate-180{
+            transform: rotate(180deg);
+          }
+          &.rotate-270{
+            transform: rotate(270deg);
+          }
+          &.rotate-360{
+            transform: rotate(360deg);
+          }
+        }
+      }
+  
+      .infoHolder{
+        position: relative;
+        margin-top: 20px;
+
+        .info{
+          right: -400px;
+          opacity: 0;
+          
+          position: absolute;
+          transition: all 0.8s cubic-bezier(1, 0, 0, 1.01);
+          width: 100%;
+  
+          h2{
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+          }
+    
+          p{
+            color: rgba(0,0,0,0.4);
+            line-height: 24px;
+          }
+  
+          &.active{
+            right: 0px;
+            opacity: 1;
+          }
+
+          &.toLeft{
+            right: 300px;
+            opacity: 0;
+          }
+        }
+        
+      }
+    }
+  }
+
+  #footer{
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+
+    #prevBtn{
+      color: rgba(0,0,0,0.6);
+    }
+
+    a{
+      text-transform: uppercase;
+      padding: 5px 0;
+      transition: all 0.3s ease;
+      transform: scale(1);
+
+      &.hide{
+        transform: scale(0);
+      }
+    }
+  }
+
+}
