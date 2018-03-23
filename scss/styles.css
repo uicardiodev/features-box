@@ -3,7 +3,7 @@
 }
 
 html {
-  background-color: #fbfbfb;
+  background-color: #2e3e4e;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -59,7 +59,7 @@ a {
   opacity: 0;
   width: 130px;
   transform: scale(0.4) rotate(90deg);
-  transition: all 0.5s cubic-bezier(1, 0.03, 0.26, 0.93);
+  transition: all 0.8s cubic-bezier(1, -0.23, 0.29, 1.35);
 }
 
 #wrapper #body .content .iconHolder .icon.active {
@@ -75,7 +75,8 @@ a {
 }
 
 #wrapper #body .content .iconHolder .circles {
-  transition: all 0.8s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  fill: blue;
 }
 
 #wrapper #body .content .iconHolder .circles.rotate-90 {
@@ -130,10 +131,31 @@ a {
 #wrapper #footer {
   display: grid;
   grid-template-columns: 80px 1fr 80px;
+  border-top: solid 1px #ededed;
 }
 
 #wrapper #footer #prevBtn {
   color: rgba(0, 0, 0, 0.6);
+}
+
+#wrapper #footer #nextBtn {
+  overflow: hidden;
+}
+
+#wrapper #footer #nextBtn ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper #footer #nextBtn ul li {
+  margin: 0;
+  padding-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#wrapper #footer #nextBtn.finish ul li {
+  margin-top: -20px;
 }
 
 #wrapper #footer a {
@@ -141,6 +163,10 @@ a {
   padding: 5px 0;
   transition: all 0.3s ease;
   transform: scale(1);
+}
+
+#wrapper #footer a:active {
+  transform: scale(0.9);
 }
 
 #wrapper #footer a.hide {

@@ -3,6 +3,12 @@ $(document).ready(function(){
   var totalSteps = 4;
   var currentStep = 1;
 
+  function updateUI(){
+    //Toggling the hide button on the base of step number
+    currentStep > 1 ? $("#prevBtn").removeClass('hide') : $("#prevBtn").addClass('hide');
+    currentStep == totalSteps ? $("#nextBtn").addClass('finish') : $("#nextBtn").removeClass('finish');
+  }
+
   $("#nextBtn").click(function(){
     if(currentStep < totalSteps){
 
@@ -22,14 +28,7 @@ $(document).ready(function(){
       //Incrementing the Step
       currentStep += 1;
 
-      //Toggling the hide button on the base of step number
-      if(currentStep > 1){
-        $("#prevBtn").removeClass('hide');
-      } else {
-        $("#prevBtn").addClass('hide');
-      }
-    } else {
-      
+      updateUI();
     }
   });
 
@@ -51,15 +50,7 @@ $(document).ready(function(){
         
       currentStep = currentStep - 1;
 
-      //Toggling the hide button on the base of step number
-      if(currentStep > 1){
-        $("#prevBtn").removeClass('hide');
-      } else {
-        $("#prevBtn").addClass('hide');
-      }
-    } else {
-      
+      updateUI();
     }
   })
-
 });
