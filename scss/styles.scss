@@ -4,13 +4,28 @@
 }
 
 html{
-  background-color: #2e3e4e;
+  background: linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1518790373778-cd7535c0117f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d8533fd9052d2e7f5bc2d3ab5ba5c5ad&auto=format&fit=crop&w=1559&q=50');
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  background-size: cover;
 }
+
 
 a{
   color: #30BCCF;
   text-decoration: none;
+}
+
+.backLink{
+  top: 20px;
+  left: 20px;
+  display: block;
+  position: fixed;
+  
+  border-radius: 20px;
+  padding: 10px 18px;
+  background-color: #76e3ef;
+    color: #1f7882;
 }
 
 // Main content
